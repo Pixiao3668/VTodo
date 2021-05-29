@@ -11,26 +11,58 @@ export default new Vuetify({
         locales: { en, zhHans},
         current: 'zhHans',
     },
+    rtl: false,
     theme: {
+        dark: false,
+        default: 'light',
+        disable: false,
+        options: {
+            cspNonce: undefined,
+            customProperties: undefined,
+            minifyTheme: undefined,
+            themeCache: undefined,
+        },
         themes: {
             light: {
-                primary: '#2196F3',
-                secondary: '#009688',
-                accent: '#009688',
-                error: '#f44336',
-                warning: '#ff5722',
-                info: '#607d8b',
-                success: '#4caf50'
+                primary: '#1976D2',
+                secondary: '#424242',
+                accent: '#82B1FF',
+                error: '#FF5252',
+                info: '#2196F3',
+                success: '#4CAF50',
+                warning: '#FB8C00',
             },
             dark: {
                 primary: '#FF5722',
-                secondary: '#FFCCBC',
-                accent: '#009688',
-                error: '#f44336',
-                warning: '#ff5722',
-                info: '#607d8b',
-                success: '#4caf50'
-            }
+                secondary: '#424242',
+                accent: '#FF4081',
+                error: '#FF5252',
+                info: '#2196F3',
+                success: '#4CAF50',
+                warning: '#FB8C00',
+            },
         },
     },
+    // theme: {
+    //     themes: {
+    //         light: {
+    //             primary: colors.blue.accent2,
+    //             secondary: '#009688',
+    //             accent: '#009688',
+    //             error: '#f44336',
+    //             warning: '#ff5722',
+    //             info: '#607d8b',
+    //             success: '#4caf50'
+    //         },
+    //         dark: {
+    //             primary: '#FF5722',
+    //             secondary: '#FFCCBC',
+    //             accent: '#009688',
+    //             error: '#f44336',
+    //             warning: '#ff5722',
+    //             info: '#607d8b',
+    //             success: '#4caf50'
+    //         }
+    //     },
+    // },
 });

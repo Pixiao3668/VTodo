@@ -2,7 +2,6 @@
   <v-app class="-webkit-scrollbar">
     <div>
       <v-system-bar
-          lights-out
           style="-webkit-app-region: drag; position: fixed; top: 0; right: 0; width: 100%; z-index: 50;"
           height="25">
         <v-spacer></v-spacer>
@@ -34,10 +33,11 @@
         <v-switch
             style="margin-top: 22px"
             v-model="$vuetify.theme.dark"
+            @click="editTheme"
         ></v-switch>
 
         <v-btn icon>
-          <v-icon>mdi-plus</v-icon>
+          <v-icon>mdi-cog</v-icon>
         </v-btn>
 
         <v-btn icon>
@@ -45,7 +45,17 @@
         </v-btn>
       </v-app-bar>
     </div>
-    <router-view style="margin-top: 100px"/>
+    <v-btn
+        absolute
+        color='#607D8B'
+        right
+        fab
+        style="position: fixed; top: 520px; z-index: 50;"
+        @click="$vuetify.goTo(0, 'duration')"
+    >
+      <v-icon>mdi-arrow-up</v-icon>
+    </v-btn>
+    <router-view style="margin-top: 100px; margin-bottom: 50px"/>
   </v-app>
 </template>
 
@@ -56,6 +66,12 @@ export default {
     group: null,
     tabs: ["todo", "命令", "记事本"]
   }),
+  mounted() {
+    const dark = JSON.parse(window.localStorage.getItem('dark'));
+    if (dark !== null) {
+      this.$vuetify.theme.dark = dark;
+    }
+  },
   methods: {
     changeView: function (tab) {
       switch (tab) {
@@ -69,6 +85,9 @@ export default {
           this.$router.replace('Test');
           break;
       }
+    },
+    editTheme() {
+      window.localStorage.setItem('dark', this.$vuetify.theme.dark.toString());
     }
   }
 }

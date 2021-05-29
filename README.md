@@ -1,16 +1,22 @@
-# vuetify
+# TodoAPP
 
-## Project setup
+## 简介
+
+一个基于Vuetify + Vue的待办事项小工具
+
+## 食用方法
+
+### 安装依赖
 ```
 yarn install
 ```
 
-### Compiles and hot-reloads for development
+### 开发环境启动
 ```
 yarn serve
 ```
 
-### Compiles and minifies for production
+### 生成环境构建
 ```
 yarn build
 ```
@@ -20,5 +26,61 @@ yarn build
 yarn lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## 待完成功能
+
+- [x] 待办事项创建
+- [ ] 待办事项编辑
+  - [ ] 等级
+  - [ ] 分类
+  - [ ] 时间
+  - [ ] 地点
+  - [ ] 内容
+  - [ ] 简介
+- [x] 待办事项删除
+  - [x] 删除
+  - [x] 取消
+- [x] 待办事项完成/未完成
+- [x] 更换Light和dart主题
+- [ ] 设置
+  - [ ] 功能开关
+  - [ ] 颜色
+  - [ ] 图片
+  - [ ] 主题
+  - [ ] 登陆
+- [x] Goto回到顶部
+- [ ] 搜索
+- [x] LeanCloud数据存储
+- [ ] LeanCLoud数据读取
+- [ ] LocalStorage数据存取
+- [ ] Lowdb数据存取
+- [ ] 使用说明
+- [ ] 关于
+- [ ] 登陆/注册
+- [ ] 功能需求发布
+  - [ ] 发布需求
+- [ ] 聊天室
+  - [ ] 登陆
+  - [ ] 发送消息
+- [ ] 集成插件
+- [ ] 功能开关
+- [ ] 创建协同任务
+- [ ] 任务完成进度
+- [ ] 记事本
+  - [ ] Markdown编辑器
+  - [ ] 创建
+  - [ ] 删除
+  - [ ] 编辑
+  - [ ] 时间轴展示
+- [ ] 命令
+  - [ ] 电脑上执行命令
+  - [ ] 创建命令
+  - [ ] 删除命令
+- [ ] 代码收藏夹
+  - [ ] 创建代码
+  - [ ] 删除代码
+  - [ ] 编辑代码
+  - [ ] 复制代码
+- [ ] Code格式化
+- [ ] 计时器/倒计时
+- [ ] 日历/天气
+

@@ -14,8 +14,10 @@
   "main": "background.js",
   "dependencies": {
     "core-js": "^3.6.5",
+    "dayjs": "^1.10.5",
     "leancloud-realtime": "^5.0.0-rc.6",
     "leancloud-storage": "^4.10.1",
+    "lowdb": "^2.1.0",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
     "vuetify": "^2.4.0"

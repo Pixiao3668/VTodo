@@ -49,12 +49,20 @@ yarn lint
   - [ ] 登陆
 - [x] Goto回到顶部
 - [ ] 搜索
-- [x] LeanCloud数据存储
-- [ ] LeanCLoud数据读取
-- [ ] LocalStorage数据存取
-- [ ] Lowdb数据存取
+- [ ] LeanCloud
+  - [ ] LeanCLoud数据存储
+  - [ ] LeanCLoud数据读取
+  - [ ] LeanCloud用户数据备份
+  - [ ] LeanCloud用户数据备份
+- [ ] LocalStorage
+  - [ ] LocalStorage数据存取
+  - [ ] LocalStorage用户数据备份
+- [ ] Lowdb
+  - [ ] Lowdb数据存取
+  - [ ] Lowdb用户数据json备份
 - [ ] 使用说明
 - [ ] 关于
+- [ ] 捐赠
 - [ ] 登陆/注册
 - [ ] 功能需求发布
   - [ ] 发布需求
@@ -83,4 +91,5 @@ yarn lint
 - [ ] Code格式化
 - [ ] 计时器/倒计时
 - [ ] 日历/天气
+- [ ] 适配Windows
 

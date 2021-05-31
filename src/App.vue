@@ -39,10 +39,6 @@
         <v-btn icon>
           <v-icon>mdi-cog</v-icon>
         </v-btn>
-
-        <v-btn icon>
-          <v-icon>mdi-magnify</v-icon>
-        </v-btn>
       </v-app-bar>
     </div>
     <v-btn
@@ -50,7 +46,8 @@
         color='#607D8B'
         right
         fab
-        style="position: fixed; top: 520px; z-index: 50;"
+        bottom
+        style="position: fixed; bottom: 18px;z-index: 50;"
         @click="$vuetify.goTo(0, 'duration')"
     >
       <v-icon>mdi-arrow-up</v-icon>
@@ -64,7 +61,7 @@ export default {
   data: () => ({
     drawer: false,
     group: null,
-    tabs: ["todo", "命令", "记事本"]
+    tabs: ["todo", "命令", "记事本"],
   }),
   mounted() {
     const dark = JSON.parse(window.localStorage.getItem('dark'));

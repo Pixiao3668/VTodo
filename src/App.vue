@@ -1,58 +1,83 @@
 <template>
-  <v-app class="-webkit-scrollbar">
-    <div>
-      <v-system-bar
-          style="-webkit-app-region: drag; position: fixed; top: 0; right: 0; width: 100%; z-index: 50;"
-          height="25">
-        <v-spacer></v-spacer>
-        <span>Todo</span>
-        <v-spacer></v-spacer>
-      </v-system-bar>
-    </div>
-    <div>
-      <v-app-bar
-          dense
-          style="-webkit-app-region: drag; position: fixed; top: 25px; right: 0; width: 100%; z-index: 50"
-      >
-        <!--        <v-btn icon @click.stop="drawer = !drawer">-->
-        <!--          <v-icon>mdi-palette</v-icon>-->
-        <!--        </v-btn>-->
-        <v-avatar size="48" style="margin-right: 15px" tile>
-          <img
-              src='./assets/logo.png'
-              alt="John"
-          >
-        </v-avatar>
-        <!--        <v-icon size="40" style="margin-right: 15px">-->
-        <!--          mdi-format-list-checks-->
-        <!--        </v-icon>-->
-        <v-tabs>
-          <v-tab v-for="item in tabs" :key="item" @click="changeView(item)">{{ item }}</v-tab>
-        </v-tabs>
-        <v-spacer></v-spacer>
-        <v-switch
-            style="margin-top: 22px"
-            v-model="$vuetify.theme.dark"
-            @click="editTheme"
-        ></v-switch>
+  <v-app>
+    <v-system-bar app style="-webkit-app-region: drag;">
+      <v-spacer></v-spacer>
+      <span>Todo</span>
+      <v-spacer></v-spacer>
+      <v-icon>mdi-minus</v-icon>
+      <v-icon>mdi-checkbox-blank-outline</v-icon>
+      <v-icon>mdi-close</v-icon>
+    </v-system-bar>
 
-        <v-btn icon>
-          <v-icon>mdi-cog</v-icon>
-        </v-btn>
-      </v-app-bar>
-    </div>
-    <v-btn
-        absolute
-        color='#607D8B'
+    <v-app-bar app>
+      <v-spacer></v-spacer>
+      <v-switch
+          style="margin-top: 22px"
+          v-model="$vuetify.theme.dark"
+          @click="editTheme"
+      ></v-switch>
+      <v-btn icon @click="drawer = !drawer">
+        <v-icon>mdi-cog</v-icon>
+      </v-btn>
+    </v-app-bar>
+
+    <v-navigation-drawer
+        v-model="drawer"
+        fixed
         right
-        fab
-        bottom
-        style="position: fixed; bottom: 18px;z-index: 50;"
-        @click="$vuetify.goTo(0, 'duration')"
+        temporary
     >
-      <v-icon>mdi-arrow-up</v-icon>
-    </v-btn>
-    <router-view style="margin-top: 100px; margin-bottom: 50px"/>
+      <v-list-item>
+        <v-list-item-content align="center">
+          <v-list-item-title>
+            工具
+          </v-list-item-title>
+        </v-list-item-content>
+      </v-list-item>
+
+      <v-divider></v-divider>
+      <v-list>
+        <v-list-item
+            v-for="item in items"
+            :key="item.title"
+            link
+            @click="changeView(item.title)"
+        >
+          <v-list-item-icon>
+            <v-icon>{{ item.icon }}</v-icon>
+          </v-list-item-icon>
+
+          <v-list-item-content>
+            <v-list-item-title>{{ item.title }}</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+
+      <template v-slot:append>
+        <div class="pa-2">
+          <v-btn block>
+            登陆/注册
+          </v-btn>
+        </div>
+      </template>
+    </v-navigation-drawer>
+
+    <v-main>
+      <v-container style="margin-bottom: 20px">
+        <router-view/>
+        <v-btn
+            elevation="2"
+            bottom
+            right
+            fab
+            icon
+            fixed
+            @click="$vuetify.goTo(0, 'duration')"
+        >
+          <v-icon>mdi-arrow-up</v-icon>
+        </v-btn>
+      </v-container>
+    </v-main>
   </v-app>
 </template>
 
@@ -62,6 +87,10 @@ export default {
     drawer: false,
     group: null,
     tabs: ["todo", "命令", "记事本"],
+    items: [
+      { title: 'todo', icon: 'mdi-view-dashboard' },
+      { title: '命令', icon: 'mdi-apple-keyboard-command' },
+      { title: '记事本', icon: 'mdi-microsoft-onenote' }],
   }),
   mounted() {
     const dark = JSON.parse(window.localStorage.getItem('dark'));

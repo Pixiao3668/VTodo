@@ -43,26 +43,4 @@ export default new Vuetify({
             },
         },
     },
-    // theme: {
-    //     themes: {
-    //         light: {
-    //             primary: colors.blue.accent2,
-    //             secondary: '#009688',
-    //             accent: '#009688',
-    //             error: '#f44336',
-    //             warning: '#ff5722',
-    //             info: '#607d8b',
-    //             success: '#4caf50'
-    //         },
-    //         dark: {
-    //             primary: '#FF5722',
-    //             secondary: '#FFCCBC',
-    //             accent: '#009688',
-    //             error: '#f44336',
-    //             warning: '#ff5722',
-    //             info: '#607d8b',
-    //             success: '#4caf50'
-    //         }
-    //     },
-    // },
 });

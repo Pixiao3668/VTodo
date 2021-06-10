@@ -8,9 +8,9 @@
       <v-icon>mdi-close</v-icon>
     </v-system-bar>
 
-<!--    <v-app-bar app>-->
-<!--      <v-spacer></v-spacer>-->
-<!--    </v-app-bar>-->
+    <!--    <v-app-bar app>-->
+    <!--      <v-spacer></v-spacer>-->
+    <!--    </v-app-bar>-->
 
     <v-navigation-drawer
         v-model="drawer"
@@ -54,7 +54,7 @@
     </v-navigation-drawer>
 
     <v-main>
-      <v-container>
+      <v-container style="margin-bottom: 30px">
         <router-view/>
         <v-speed-dial
             fixed
@@ -99,6 +99,15 @@
               fab
               dark
               small
+              @click="$router.replace('Todo')"
+              :color="$vuetify.theme.dark ? 'blue' : 'black'"
+          >
+            <v-icon>mdi-home</v-icon>
+          </v-btn>
+          <v-btn
+              fab
+              dark
+              small
               @click="$vuetify.goTo(0)"
               :color="$vuetify.theme.dark ? 'red' : 'black'"
           >
@@ -133,33 +142,7 @@ export default {
       this.$vuetify.theme.dark = dark;
     }
   },
-  computed: {
-    activeFab() {
-      switch (this.tabs) {
-        case 'one':
-          return {class: 'purple', icon: 'account_circle'}
-        case 'two':
-          return {class: 'red', icon: 'edit'}
-        case 'three':
-          return {class: 'green', icon: 'keyboard_arrow_up'}
-        default:
-          return {}
-      }
-    },
-  },
   watch: {
-    top(val) {
-      this.bottom = !val
-    },
-    right(val) {
-      this.left = !val
-    },
-    bottom(val) {
-      this.top = !val
-    },
-    left(val) {
-      this.right = !val
-    },
   },
   methods: {
     changeView: function (tab) {

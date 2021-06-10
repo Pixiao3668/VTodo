@@ -23,7 +23,11 @@ export default {
         ],
         newTask: null,
         delTask: null,
-        editText: null,
+        editTask: {
+            done: null,
+            text: null,
+            time: null,
+        },
         finishTask: null,
         removeDialog: false,
         editDialog: false,
@@ -32,7 +36,7 @@ export default {
         menu: false,
         modal: false,
         menu2: false,
-        text: "123"
+        taskTitle: null
     }),
 
     computed: {
@@ -126,7 +130,8 @@ export default {
         editDia(index){
             this.editDialog = true;
             this.index = index;
-            this.editText = this.tasks[index].text;
+            this.taskTitle = this.tasks[index].text;
+            this.editTask = this.tasks[index];
         }
     },
 }

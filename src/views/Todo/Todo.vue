@@ -129,7 +129,7 @@
                 <v-card-title>
                   <span class="text-h5">编辑事项</span>
                 </v-card-title>
-                <v-card-text>
+                <v-form>
                   <v-container>
                     <v-row>
                       <v-col
@@ -138,7 +138,7 @@
                         <v-text-field
                             label="事项名称"
                             prepend-icon="mdi-text"
-                            v-model="text"
+                            v-model="editTask.text"
                         >
                         </v-text-field>
                       </v-col>
@@ -158,7 +158,6 @@
                                 v-model="date"
                                 label="日期"
                                 prepend-icon="mdi-calendar"
-                                readonly
                                 v-bind="attrs"
                                 v-on="on"
                             ></v-text-field>
@@ -171,7 +170,13 @@
                       </v-col>
                     </v-row>
                   </v-container>
-                </v-card-text>
+                </v-form>
+<!--                <v-card-text>-->
+<!--                  <v-container>-->
+<!--                    <v-row>-->
+<!--                    </v-row>-->
+<!--                  </v-container>-->
+<!--                </v-card-text>-->
                 <v-card-actions>
                   <v-spacer></v-spacer>
                   <v-btn

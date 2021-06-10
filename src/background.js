@@ -18,7 +18,7 @@ async function createWindow() {
     frame: false,
     transparent: true,
     titleBarStyle: 'hidden',
-    resizable: false,
+    // resizable: false,  // 主进程窗口大小可调整
     webPreferences: {
       // Use pluginOptions.nodeIntegration, leave this alone
       // See nklayman.github.io/vue-cli-plugin-electron-builder/guide/security.html#node-integration for more info
